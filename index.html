@@ -1,1 +1,201 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Docs Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts for clean look -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { font-family: 'Inter', Arial, sans-serif; background:#fff; min-height: 100vh; }
+    #container { display: flex; min-height: 100vh; }
+    /* SIDEBAR */
+    .sidebar {
+      width: 300px;
+      background: #fff;
+      border-right: 1px solid #eee;
+      padding: 32px 0 32px 0;
+      box-sizing: border-box;
+      min-height: 100vh;
+      position: sticky;
+      top: 0;
+      /* To make the background shadow like Thunkable's when scrolling */
+      box-shadow: 1px 0 0 #eee;
+      overflow-y: auto;
+      z-index: 100;
+    }
+    .sidebar-group {
+      margin-bottom: 36px;
+    }
+    .sidebar-heading {
+      font-weight: 600;
+      color: #23272F;
+      text-transform: uppercase;
+      font-size: 0.97em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.01em;
+      padding-left: 28px;
+      user-select: none;
+    }
+    .sidebar-heading .emoji {
+      font-size: 1.2em;
+      margin-right: 8px;
+    }
+    .sidebar-link-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      color: #666d7a;
+      font-size: 1.07em;
+      text-decoration: none;
+      padding: 9px 16px 9px 38px;
+      border-radius: 7px;
+      font-weight: 400;
+      margin-bottom: 1px;
+      transition: background 0.13s, color 0.13s;
+      cursor: pointer;
+      position: relative;
+    }
+    .sidebar-link.active, .sidebar-link:hover {
+      background: #f5faff;
+      color: #1976d2;
+      font-weight: 500;
+    }
+    .sidebar-link .chevron {
+      margin-left: auto;
+      color: #bbb;
+      font-size: 1.13em;
+    }
+    .sidebar-link .emoji {
+      margin-right: 10px;
+      font-size: 1.03em;
+    }
+    .sidebar-link.indent {
+      font-size: 1em;
+      padding-left: 50px;
+      color: #848a96;
+    }
+    /* Page MAIN Content */
+    #main {
+      flex: 1;
+      padding: 2.8rem 4vw 4em 4vw;
+      min-width: 0;
+      min-height: 100vh;
+      background: #f7fafb;
+    }
+    h1 {
+      color: #336699;
+      margin-top:0;
+    }
+    main {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px #0001;
+      padding: 2em 2em 1.7em 2em;
+      margin-top: 26px;
+    }
+    nav {
+      margin: 24px 0 0 0;
+    }
+    nav a {
+      margin-right: 1.4em;
+      color: #1976d2;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1em;
+      transition: color 0.12s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color:#1257A2;
+    }
+    footer { color: #adb1ba; font-size:0.99em; margin-top: 2.5em; border-top: 1px solid #ecf0f3; padding-top: 1.2em; }
+    @media (max-width: 900px) {
+      .sidebar { position:static; width:100%; min-height:unset; box-shadow:none; border-right:none; }
+      #container { flex-direction: column; }
+      #main { padding:1em 0.6em;}
+    }
+    @media (max-width: 600px) {
+      #main { padding:0.3em 0.1em;}
+      main { padding: 1.2em 0.5em;}
+      .sidebar-heading { padding-left: 13px; }
+      .sidebar-link { padding-left: 22px;}
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-group">
+      <div class="sidebar-heading">
+        <span class="emoji" title="Getting Started">🚀</span>
+        GETTING STARTED
+      </div>
+      <ul class="sidebar-link-list">
+        <li><a class="sidebar-link active" href="index.html">Getting Started Guide</a></li>
+        <li><a class="sidebar-link" href="#">Gen AI <span class="chevron">&#8250;</span></a></li>
+        <li><a class="sidebar-link" href="#">Keyboard Shortcuts</a></li>
+        <li><a class="sidebar-link" href="#">Undo Redo</a></li>
+        <li><a class="sidebar-link" href="#">Python Docs Account <span class="chevron">&#8250;</span></a></li>
+        <li><a class="sidebar-link" href="#">Preview and Test your App</a></li>
+        <li><a class="sidebar-link" href="#">Versioning</a></li>
+        <li><a class="sidebar-link" href="#">Data Sources <span class="chevron">&#8250;</span></a></li>
+        <li><a class="sidebar-link" href="#">Project Collaboration <span class="chevron">&#8250;</span></a></li>
+        <li><a class="sidebar-link indent" href="#"><span class="emoji">🎓</span> Sample Apps & Tutorials <span class="chevron">&#8250;</span></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-heading">
+        <span class="emoji" title="App Design">🎨</span>
+        APP DESIGN
+      </div>
+      <ul class="sidebar-link-list">
+        <li><a class="sidebar-link" href="#">User Interface (UI) Components <span class="chevron">&#8250;</span></a></li>
+        <li><a class="sidebar-link" href="#">Screens <span class="chevron">&#8250;</span></a></li>
+        <li><a class="sidebar-link" href="#">Navigators <span class="chevron">&#8250;</span></a></li>
+        <li><a class="sidebar-link" href="#">Figma Integration</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-heading">
+        <span class="emoji" title="Blocks">🛠️</span>
+        BLOCKS
+      </div>
+      <ul class="sidebar-link-list">
+        <li><a class="sidebar-link" href="#">Python Docs Blocks Overview</a></li>
+      </ul>
+    </div>
+  </aside>
+  <!-- MAIN CONTENT -->
+  <div id="main">
+    <h1>Python Project Documentation</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Usage</a>
+      <a href="#">API</a>
+    </nav>
+    <main>
+      <h2>Welcome!</h2>
+      <p>This is the homepage of your Python documentation site.</p>
+      <p>Use the navigation sidebar on the left to explore guides, API reference, and more.</p>
+      <ul>
+        <li><b>Usage:</b> How to install and use your package.</li>
+        <li><b>API:</b> Reference for core modules and classes.</li>
+      </ul>
+      <p>Edit these HTML files to expand your documentation!</p>
+    </main>
+    <footer>
+      &copy; 2025 Your Project. Powered by GitHub Pages.
+    </footer>
+  </div>
+</div>
+</body>
+</html>
