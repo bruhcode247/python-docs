@@ -42,6 +42,10 @@ pre {
     padding: 15px;
     border-radius: 10px; /* Rounded corners */
     overflow: auto;
+    background-color: grey;
+    border: 1px solid black;
+    margin-bottom: 5px;
+
 }
 
 code {
