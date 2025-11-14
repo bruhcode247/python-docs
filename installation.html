@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>How to Install Python</title>
         <title>How to Install Python - Fun & Easy Guide</title>
         <link rel="stylesheet" href="guide page.css" />
         <link
@@ -16,50 +15,114 @@
     <body>
         <div class="installation-container">
             <h1>how to install python</h1>
+            <a href="index.html" class="back-button"> Back to Home </a>
 
-            <p>Navigate to python.org</p>
+            <h2>for windows users</h2>
+
+            <p>navigate to python.org</p>
             <img
                 src="https://i.ibb.co/MkfGcXYK/Screenshot-2025-11-08-at-7-30-26-am.png"
-                alt="Python.org homepage showing the official Python website"
+                alt="python.org"
             />
 
-            <p>Click on the "Downloads" option in the menu bar</p>
+            <p>click on the downloads option in the menu bar</p>
 
-            <p>Now click on "Download Latest Version"</p>
-            <img
-                src="https://ibb.co/234QykGV"
-                alt="Python.org download page showing latest version"
-            />
+            <p>now click on the download latest versions</p>
+            <img src="https://ibb.co/234QykGV" alt="python.org download" />
 
-            <p>Open the downloaded .exe file</p>
+            <p>open exe</p>
 
-            <p>
-                Make sure to check the important boxes shown in the picture
-                below - this step is crucial!
-            </p>
+            <p>check things shown in pic</p>
             <img
                 src="https://i.ibb.co/fzFGRtBN/Screenshot-2025-11-09-at-6-37-08-pm.png"
-                alt="Python installer showing important checkboxes for PATH and permissions"
+                alt="persmission"
             />
 
-            <p>
-                Click "Customize Installation" - let's make Python exactly how
-                we want it! 🎨
-            </p>
+            <p>click customise install</p>
+
+            <p>now add the extras you want to be installed now hit next</p>
+
+            <p>now hit install</p>
+
+            <p>now hit close button</p>
+
+            <h2>for mac users</h2>
+
+            <p>navigate to python.org</p>
+
+            <p>click on the downloads option in the menu bar</p>
+
+            <p>now click on the download latest versions</p>
+
+            <p>open the pkg file</p>
+
+            <p>click continue on the introduction screen</p>
+
+            <p>click continue on the read me screen</p>
+
+            <p>click continue on the license screen then click agree</p>
+
+            <p>select your destination disk and click continue</p>
+
+            <p>click install and enter your password if prompted</p>
+
+            <p>wait for installation to complete then click close</p>
+
+            <h2>how to install idle on windows</h2>
+
+            <p>idle comes with python by default</p>
+
+            <p>search for idle in start menu</p>
+
+            <p>click on idle python to open it</p>
 
             <p>
-                Add any extra components you want to be installed, then hit
-                "Next" 🔧
+                if idle doesnt appear reinstall python with tcl tk option
+                checked
             </p>
 
-            <p>Now hit "Install"p></p>
+            <h2>how to install idle on mac</h2>
 
-            <p>Once installation is complete, click the "Close" button</p>
+            <p>idle comes with python by default</p>
 
-            <p>
-                Finally, run the code below in your terminal or command prompt
-                to check if Python installed successfully:
-            </p>
+            <p>open finder and go to applications</p>
+
+            <p>find python folder and open it</p>
+
+            <p>double click on idle to open it</p>
+
+            <p>alternatively open terminal and type idle3</p>
+
+            <div class="code-container">
+                <div class="code-buttons">
+                    <button class="copy-button" onclick="copyCode(this)">
+                        Copy
+                    </button>
+                    <button class="run-button" onclick="runCode(this)">
+                        Run
+                    </button>
+                </div>
+                <code>idle3</code>
+                <div class="code-output" id="output-1"></div>
+            </div>
+
+            <h2>test python installation</h2>
+
+            <p>for mac users run this command</p>
+            <div class="code-container">
+                <div class="code-buttons">
+                    <button class="copy-button" onclick="copyCode(this)">
+                        Copy
+                    </button>
+                    <button class="run-button" onclick="runCode(this)">
+                        Run
+                    </button>
+                </div>
+                <code>python3 --version</code>
+                <div class="code-output" id="output-2"></div>
+            </div>
+
+            <p>for windows users run this command</p>
             <div class="code-container">
                 <div class="code-buttons">
                     <button class="copy-button" onclick="copyCode(this)">
@@ -70,7 +133,7 @@
                     </button>
                 </div>
                 <code>python --version</code>
-                <div class="code-output" id="output-1"></div>
+                <div class="code-output" id="output-3"></div>
             </div>
         </div>
     </body>
