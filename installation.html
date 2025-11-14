@@ -1,140 +1,215 @@
+<!--
+===================================================
+PYTHON DOCS - INSTALLATION GUIDE PAGE
+===================================================
+Complete installation instructions for Python and IDLE
+Supports: Windows, Mac, with interactive code testing
+Features: Bubbly design, copy/run buttons, responsive layout
+===================================================
+-->
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>How to Install Python - Fun & Easy Guide</title>
+
+        <!-- Main stylesheet with bubbly design system -->
         <link rel="stylesheet" href="guide page.css" />
+
+        <!-- Google Fonts - Inter for UI, Comic Neue for playfulness, Fira Code for code -->
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Comic+Neue:wght@400;700&family=Fira+Code&display=swap"
             rel="stylesheet"
         />
+
+        <!-- Pyodide CDN - Python interpreter for browser -->
         <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+
+        <!-- Custom JavaScript for copy/run functionality -->
         <script src="code-runner.js"></script>
     </head>
     <body>
+        <!-- Main container with glassmorphism effect -->
         <div class="installation-container">
+            <!-- Page title with gradient text and bounce animation -->
             <h1>how to install python</h1>
+
+            <!-- Floating back button - always visible in top-left -->
             <a href="index.html" class="back-button"> Back to Home </a>
 
+            <!-- ===== WINDOWS INSTALLATION SECTION ===== -->
             <h2>for windows users</h2>
 
+            <!-- Step 1: Navigate to official Python website -->
             <p>navigate to python.org</p>
             <img
                 src="https://i.ibb.co/MkfGcXYK/Screenshot-2025-11-08-at-7-30-26-am.png"
                 alt="python.org"
             />
 
+            <!-- Step 2: Access downloads section -->
             <p>click on the downloads option in the menu bar</p>
 
+            <!-- Step 3: Download the installer -->
             <p>now click on the download latest versions</p>
             <img src="https://ibb.co/234QykGV" alt="python.org download" />
 
+            <!-- Step 4: Run the installer -->
             <p>open exe</p>
 
+            <!-- Step 5: Important installer settings -->
             <p>check things shown in pic</p>
             <img
                 src="https://i.ibb.co/fzFGRtBN/Screenshot-2025-11-09-at-6-37-08-pm.png"
                 alt="persmission"
             />
 
+            <!-- Step 6: Customize installation options -->
             <p>click customise install</p>
 
+            <!-- Step 7: Select additional components -->
             <p>now add the extras you want to be installed now hit next</p>
 
+            <!-- Step 8: Begin installation -->
             <p>now hit install</p>
 
+            <!-- Step 9: Complete installation -->
             <p>now hit close button</p>
 
+            <!-- ===== MAC INSTALLATION SECTION ===== -->
             <h2>for mac users</h2>
 
+            <!-- Step 1: Navigate to official Python website -->
             <p>navigate to python.org</p>
 
+            <!-- Step 2: Access downloads section -->
             <p>click on the downloads option in the menu bar</p>
 
+            <!-- Step 3: Download the Mac installer -->
             <p>now click on the download latest versions</p>
 
+            <!-- Step 4: Open the Mac installer package -->
             <p>open the pkg file</p>
 
+            <!-- Step 5: Navigate installer introduction -->
             <p>click continue on the introduction screen</p>
 
+            <!-- Step 6: Navigate installer readme -->
             <p>click continue on the read me screen</p>
 
+            <!-- Step 7: Accept the license agreement -->
             <p>click continue on the license screen then click agree</p>
 
+            <!-- Step 8: Select installation location -->
             <p>select your destination disk and click continue</p>
 
+            <!-- Step 9: Authorize and install -->
             <p>click install and enter your password if prompted</p>
 
+            <!-- Step 10: Complete installation -->
             <p>wait for installation to complete then click close</p>
 
+            <!-- ===== WINDOWS IDLE INSTALLATION ===== -->
             <h2>how to install idle on windows</h2>
 
+            <!-- IDLE is included with Python by default -->
             <p>idle comes with python by default</p>
 
+            <!-- How to find IDLE in Windows -->
             <p>search for idle in start menu</p>
 
+            <!-- Launch IDLE -->
             <p>click on idle python to open it</p>
 
+            <!-- Troubleshooting tip for missing IDLE -->
             <p>
                 if idle doesnt appear reinstall python with tcl tk option
                 checked
             </p>
 
+            <!-- ===== MAC IDLE INSTALLATION ===== -->
             <h2>how to install idle on mac</h2>
 
+            <!-- IDLE is included with Python by default -->
             <p>idle comes with python by default</p>
 
+            <!-- Method 1: Using Finder -->
             <p>open finder and go to applications</p>
 
+            <!-- Navigate to Python folder -->
             <p>find python folder and open it</p>
 
+            <!-- Launch IDLE from Applications -->
             <p>double click on idle to open it</p>
 
+            <!-- Method 2: Using Terminal -->
             <p>alternatively open terminal and type idle3</p>
 
+            <!-- Interactive code block - Terminal command for IDLE -->
             <div class="code-container">
                 <div class="code-buttons">
+                    <!-- Copy button - copies command to clipboard -->
                     <button class="copy-button" onclick="copyCode(this)">
                         Copy
                     </button>
+                    <!-- Run button - executes command in browser (simulation) -->
                     <button class="run-button" onclick="runCode(this)">
                         Run
                     </button>
                 </div>
+                <!-- Terminal command to launch IDLE on Mac -->
                 <code>idle3</code>
+                <!-- Output area for command results -->
                 <div class="code-output" id="output-1"></div>
             </div>
 
+            <!-- ===== INSTALLATION VERIFICATION ===== -->
             <h2>test python installation</h2>
 
+            <!-- Mac version check - uses python3 command -->
             <p>for mac users run this command</p>
             <div class="code-container">
                 <div class="code-buttons">
+                    <!-- Copy Mac version command -->
                     <button class="copy-button" onclick="copyCode(this)">
                         Copy
                     </button>
+                    <!-- Run Mac version command in browser -->
                     <button class="run-button" onclick="runCode(this)">
                         Run
                     </button>
                 </div>
+                <!-- Mac Python version command -->
                 <code>python3 --version</code>
+                <!-- Mac command output area -->
                 <div class="code-output" id="output-2"></div>
             </div>
 
+            <!-- Windows version check - uses python command -->
             <p>for windows users run this command</p>
             <div class="code-container">
                 <div class="code-buttons">
+                    <!-- Copy Windows version command -->
                     <button class="copy-button" onclick="copyCode(this)">
                         Copy
                     </button>
+                    <!-- Run Windows version command in browser -->
                     <button class="run-button" onclick="runCode(this)">
                         Run
                     </button>
                 </div>
+                <!-- Windows Python version command -->
                 <code>python --version</code>
+                <!-- Windows command output area -->
                 <div class="code-output" id="output-3"></div>
             </div>
         </div>
+
+        <!--
+        JavaScript functionality is loaded from external files:
+        - Pyodide provides Python interpreter in browser
+        - code-runner.js handles copy/run button functionality
+        -->
     </body>
 </html>

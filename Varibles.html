@@ -1,64 +1,103 @@
+<!--
+===================================================
+PYTHON DOCS - VARIABLES TUTORIAL PAGE
+===================================================
+Learn how to work with Python variables
+Features: Interactive examples, copy/run buttons, bubbly design
+Topics: String variables, number variables, syntax rules
+===================================================
+-->
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>How to Use Variables</title>
+
+        <!-- Pyodide CDN - Python interpreter for browser -->
         <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+
+        <!-- Custom JavaScript for copy/run functionality -->
         <script src="code-runner.js"></script>
+
+        <!-- Main stylesheet with bubbly design system -->
         <link rel="stylesheet" href="guide page.css" />
+
+        <!-- Google Fonts - Inter for UI, Comic Neue for playfulness, Fira Code for code -->
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Comic+Neue:wght@400;700&family=Fira+Code&display=swap"
             rel="stylesheet"
         />
     </head>
     <body>
+        <!-- Main container with glassmorphism effect -->
         <div class="installation-container">
-            <h1>how to use varibles</h1>
+            <!-- Page title with gradient text and bounce animation -->
+            <h1>how to use variables</h1>
+
+            <!-- Floating back button - always visible in top-left -->
             <a href="index.html" class="back-button"> Back to Home </a>
 
-            <h2>set a varible</h2>
+            <!-- ===== STRING VARIABLE SECTION ===== -->
+            <h2>set a variable</h2>
 
+            <!-- Interactive code example - Creating a string variable -->
             <div class="code-container">
                 <div class="code-buttons">
+                    <!-- Copy button - copies code to clipboard -->
                     <button class="copy-button" onclick="copyCode(this)">
                         Copy
                     </button>
+                    <!-- Run button - executes code in browser -->
                     <button class="run-button" onclick="runCode(this)">
                         Run
                     </button>
                 </div>
                 <pre>
                     <code>
-myvarible = "hi"
+myvariable = "hi"
                     </code>
                 </pre>
+                <!-- Output area for code execution results -->
                 <div class="code-output" id="output-1"></div>
             </div>
+            <!-- Explanation about string syntax - why quotes and spaces matter -->
             <p>the space and "" is needed or it will give you errors</p>
 
-            <h2>how to make python set a number as a varible</h2>
+            <!-- ===== NUMBER VARIABLE SECTION ===== -->
+            <h2>how to make python set a number as a variable</h2>
 
+            <!-- Interactive code example - Creating a number variable -->
             <div class="code-container">
                 <div class="code-buttons">
+                    <!-- Copy button for number variable example -->
                     <button class="copy-button" onclick="copyCode(this)">
                         Copy
                     </button>
+                    <!-- Run button for number variable example -->
                     <button class="run-button" onclick="runCode(this)">
                         Run
                     </button>
                 </div>
                 <pre>
                     <code>
-varible = 81
+variable = 81
                     </code>
                 </pre>
+                <!-- Output area for number variable results -->
                 <div class="code-output" id="output-2"></div>
             </div>
+            <!-- Explanation about number vs string syntax - no quotes needed for numbers -->
             <p>
                 so this time you dont need the "" beacuase the "" tells python
                 that it is a string
             </p>
         </div>
+
+        <!--
+        JavaScript functionality is loaded from external files:
+        - Pyodide provides Python interpreter in browser
+        - code-runner.js handles copy/run button functionality
+        -->
     </body>
 </html>

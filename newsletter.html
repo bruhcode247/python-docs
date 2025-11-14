@@ -1,20 +1,41 @@
+<!--
+===================================================
+PYTHON DOCS - NEWSLETTER SIGNUP PAGE
+===================================================
+Newsletter subscription page with embedded Kit.com form
+Features: Bubbly design, glassmorphism effects, responsive layout
+Integration: Kit.com email marketing platform
+===================================================
+-->
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Newsletter</title>
+
+        <!-- Main stylesheet with bubbly design system -->
         <link rel="stylesheet" href="guide page.css" />
+
+        <!-- Google Fonts - Inter for UI, Comic Neue for playfulness, Fira Code for code -->
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Comic+Neue:wght@400;700&family=Fira+Code&display=swap"
             rel="stylesheet"
         />
     </head>
     <body>
+        <!-- Main container with glassmorphism effect and newsletter-specific styling -->
         <div class="installation-container newsletter-container">
+            <!-- Floating back button - always visible in top-left -->
             <a href="index.html" class="back-button"> Back to Home </a>
+
+            <!-- Page title with gradient text and bounce animation -->
             <h1>newsletter signup</h1>
+
+            <!-- Enhanced wrapper for newsletter iframe with special effects -->
             <div class="iframe-wrapper">
+                <!-- Embedded Kit.com newsletter signup form -->
+                <!-- Features: Animated border glow, hover effects, floating emojis -->
                 <iframe
                     name="newsletter"
                     src="https://python-docs.kit.com/663b5fb723"
@@ -24,5 +45,14 @@
                 ></iframe>
             </div>
         </div>
+
+        <!--
+        Styling enhancements applied via CSS:
+        - .newsletter-container: Narrower layout for focused signup
+        - .iframe-wrapper: Glassmorphism effects with animated border
+        - Floating emoji decorations (📧✨💌📝)
+        - Responsive design for mobile devices
+        - Hover effects and smooth transitions
+        -->
     </body>
 </html>

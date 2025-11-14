@@ -1,4 +1,13 @@
-/* Bubbly and Fun Installation Page Styles */
+/* ===================================================
+   PYTHON DOCS - BUBBLY & PLAYFUL DESIGN SYSTEM
+   ===================================================
+   Main CSS file for Python documentation pages
+   Features: Animated gradients, glassmorphism, bubbles
+   Author: Python Docs Team
+   ================================================= */
+
+/* ===== BASE STYLES ===== */
+/* Reset default browser styles and set base typography */
 html,
 body {
     height: 100%;
@@ -6,6 +15,7 @@ body {
     font-family: "Inter", "Comic Neue", Arial, sans-serif;
 }
 
+/* Main body with animated gradient background */
 body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
@@ -13,6 +23,8 @@ body {
     animation: gradientShift 8s ease-in-out infinite alternate;
 }
 
+/* ===== ANIMATIONS ===== */
+/* Background gradient animation - cycles through different color schemes */
 @keyframes gradientShift {
     0% {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -25,7 +37,8 @@ body {
     }
 }
 
-/* Floating bubbles background */
+/* ===== FLOATING BUBBLE EFFECTS ===== */
+/* Creates subtle floating bubble effects in the background */
 body::before {
     content: "";
     position: fixed;
@@ -33,6 +46,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
+    /* Multiple radial gradients create bubble-like effects */
     background-image:
         radial-gradient(
             circle at 20% 80%,
@@ -53,6 +67,7 @@ body::before {
     animation: float 6s ease-in-out infinite;
 }
 
+/* Floating animation for bubble effects */
 @keyframes float {
     0%,
     100% {
@@ -66,21 +81,23 @@ body::before {
     }
 }
 
-/* Main container */
+/* ===== MAIN CONTAINER ===== */
+/* Glassmorphism container that holds all page content */
 .installation-container {
     max-width: 900px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+    backdrop-filter: blur(20px); /* Glassmorphism blur effect */
     border-radius: 30px;
     padding: 40px;
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.1),
-        0 0 0 1px rgba(255, 255, 255, 0.2);
+        /* Main shadow */ 0 0 0 1px rgba(255, 255, 255, 0.2); /* Subtle border */
     position: relative;
     overflow: hidden;
 }
 
+/* Subtle rotating gradient overlay for extra visual interest */
 .installation-container::before {
     content: "";
     position: absolute;
@@ -98,6 +115,7 @@ body::before {
     z-index: -1;
 }
 
+/* Slow rotation animation for the conic gradient */
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -107,12 +125,13 @@ body::before {
     }
 }
 
-/* Headers */
+/* ===== TYPOGRAPHY ===== */
+/* Main page title with gradient text and bounce animation */
 h1 {
     font-size: 3.5em;
     text-align: center;
     background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
-    -webkit-background-clip: text;
+    -webkit-background-clip: text; /* Webkit prefix for gradient text */
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 30px;
@@ -123,6 +142,7 @@ h1 {
     animation: bounce 2s ease-in-out infinite;
 }
 
+/* Bounce animation for the main title */
 @keyframes bounce {
     0%,
     20%,
@@ -139,6 +159,7 @@ h1 {
     }
 }
 
+/* Python snake emoji that wiggles next to the title */
 h1::after {
     content: "🐍";
     position: absolute;
@@ -149,6 +170,7 @@ h1::after {
     animation: wiggle 1.5s ease-in-out infinite;
 }
 
+/* Wiggle animation for the snake emoji */
 @keyframes wiggle {
     0%,
     100% {
@@ -159,7 +181,7 @@ h1::after {
     }
 }
 
-/* Paragraphs */
+/* Paragraph styling with card-like appearance */
 p {
     font-size: 1.2em;
     color: #444;
@@ -172,11 +194,12 @@ p {
     border: 2px solid transparent;
     background-clip: padding-box;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Smooth hover transitions */
 }
 
+/* Emoji indicators for paragraphs - adds visual interest */
 p::before {
-    content: "💡";
+    content: "💡"; /* Default lightbulb emoji */
     position: absolute;
     left: -15px;
     top: -10px;
@@ -187,22 +210,25 @@ p::before {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Alternating emoji patterns for visual variety */
 p:nth-child(even)::before {
-    content: "✨";
+    content: "✨"; /* Sparkles for even paragraphs */
     background: linear-gradient(135deg, #a29bfe, #6c5ce7);
 }
 p:nth-child(3n)::before {
-    content: "🚀";
+    content: "🚀"; /* Rocket for every 3rd paragraph */
     background: linear-gradient(135deg, #fd79a8, #e84393);
 }
 
+/* Hover effect for paragraphs - lifts up with enhanced shadow */
 p:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     background: linear-gradient(135deg, #fff 0%, #e8f4ff 100%);
 }
 
-/* Images */
+/* ===== IMAGE STYLING ===== */
+/* Responsive images with rounded corners and shadows */
 img {
     max-width: 100%;
     height: auto;
@@ -213,18 +239,20 @@ img {
     border: 3px solid rgba(255, 255, 255, 0.8);
 }
 
+/* Image hover effect - slight scale and rotation */
 img:hover {
     transform: scale(1.05) rotate(1deg);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Code blocks */
+/* ===== CODE STYLING ===== */
+/* Terminal-like styling for code blocks */
 code {
     background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-    color: #68d391;
+    color: #68d391; /* Green text like terminal */
     padding: 15px 25px;
     border-radius: 15px;
-    font-family: "Fira Code", "Monaco", monospace;
+    font-family: "Fira Code", "Monaco", monospace; /* Monospace fonts */
     font-size: 1.1em;
     display: inline-block;
     margin: 15px 0;
@@ -234,12 +262,14 @@ code {
     transition: all 0.3s ease;
 }
 
+/* Terminal prompt indicator */
 code::before {
-    content: "$ ";
-    color: #f56565;
+    content: "$ "; /* Dollar sign like terminal */
+    color: #f56565; /* Red color */
     font-weight: bold;
 }
 
+/* Blinking cursor dot in code blocks */
 code::after {
     content: "";
     position: absolute;
@@ -252,6 +282,7 @@ code::after {
     animation: blink 1s infinite;
 }
 
+/* Blinking animation for cursor */
 @keyframes blink {
     0%,
     50% {
@@ -263,20 +294,23 @@ code::after {
     }
 }
 
+/* Code block hover effect */
 code:hover {
     transform: translateY(-2px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
 }
 
-/* Step indicators */
+/* ===== STEP INDICATORS ===== */
+/* Add margin to odd paragraphs for step numbers */
 p:nth-child(odd) {
     position: relative;
     margin-left: 40px;
 }
 
+/* Numbered step indicators for odd paragraphs */
 p:nth-child(odd)::after {
-    content: counter(step-counter);
+    content: counter(step-counter); /* CSS counter for automatic numbering */
     counter-increment: step-counter;
     position: absolute;
     left: -60px;
@@ -295,38 +329,41 @@ p:nth-child(odd)::after {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
+/* Initialize the step counter */
 body {
     counter-reset: step-counter;
 }
 
-/* Responsive design */
+/* ===== RESPONSIVE DESIGN ===== */
+/* Tablet and mobile optimizations */
 @media (max-width: 768px) {
     .installation-container {
-        margin: 10px;
+        max-width: 95vw; /* Almost full width on mobile */
         padding: 20px;
         border-radius: 20px;
     }
 
     h1 {
-        font-size: 2.5em;
+        font-size: 2.5em; /* Smaller title on mobile */
     }
 
     h1::after {
-        right: -40px;
+        right: -40px; /* Adjust snake emoji position */
         font-size: 0.5em;
     }
 
     p {
-        margin-left: 0;
+        margin-left: 0; /* Remove left margin on mobile */
         font-size: 1.1em;
     }
 
     p:nth-child(odd)::after {
-        display: none;
+        display: none; /* Hide step numbers on mobile for cleaner look */
     }
 }
 
-/* Fun hover effects for the whole container */
+/* ===== CONTAINER INTERACTIONS ===== */
+/* Subtle lift effect when hovering over the main container */
 .installation-container:hover {
     transform: translateY(-5px);
     box-shadow:
@@ -334,32 +371,37 @@ body {
         0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
-/* Scrollbar styling */
+/* ===== CUSTOM SCROLLBAR ===== */
+/* Styled scrollbar to match the theme */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
+/* Scrollbar track */
 ::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
 }
 
+/* Scrollbar handle */
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(45deg, #667eea, #764ba2);
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Scrollbar handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(45deg, #764ba2, #667eea);
 }
 
-/* Stylish Back Button */
+/* ===== BACK BUTTON ===== */
+/* Floating back button with glassmorphism effect */
 .back-button {
-    position: fixed;
+    position: fixed; /* Always visible in top-left */
     top: 30px;
     left: 30px;
-    z-index: 1000;
+    z-index: 1000; /* Above all other content */
     text-decoration: none;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -373,27 +415,31 @@ body {
     align-items: center;
     gap: 10px;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Glassmorphism blur */
 }
 
+/* Arrow icon for back button */
 .back-button::before {
-    content: "←";
+    content: "←"; /* Left arrow character */
     font-size: 1.3em;
     font-weight: bold;
     transition: transform 0.3s ease;
 }
 
+/* Back button hover effect - lifts up and changes gradient */
 .back-button:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
     background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
 
+/* Arrow animation on hover */
 .back-button:hover::before {
     transform: translateX(-5px);
     animation: bounce-left 0.6s ease-in-out;
 }
 
+/* Bounce animation for the back arrow */
 @keyframes bounce-left {
     0%,
     100% {
@@ -409,263 +455,413 @@ body {
     box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
 }
 
-/* Mobile responsive back button */
+/* Mobile responsive back button - smaller size and position */
 @media (max-width: 768px) {
     .back-button {
-        top: 20px;
-        left: 20px;
-        padding: 12px 20px;
-        font-size: 1em;
+        top: 20px; /* Closer to top edge on mobile */
+        left: 20px; /* Closer to left edge on mobile */
+        padding: 12px 20px; /* Smaller padding */
+        font-size: 1em; /* Smaller font size */
     }
 }
 
-/* Newsletter specific enhancements */
+/* ===== NEWSLETTER PAGE STYLES ===== */
+/* Newsletter specific container - narrower than default */
 .newsletter-container {
-    max-width: 600px;
-    text-align: center;
+    max-width: 600px; /* Narrower for newsletter signup focus */
+    text-align: center; /* Center all newsletter content */
 }
 
+/* Wrapper for newsletter iframe with glassmorphism styling */
 .iframe-wrapper {
     position: relative;
-    margin: 30px auto;
+    margin: 30px auto; /* Center with top/bottom spacing */
     padding: 20px;
+    /* Semi-transparent gradient background */
     background: linear-gradient(
         135deg,
         rgba(255, 255, 255, 0.9) 0%,
         rgba(248, 250, 255, 0.9) 100%
     );
     border-radius: 25px;
+    /* Layered shadow effects */
     box-shadow:
         0 20px 40px rgba(102, 126, 234, 0.15),
-        0 0 0 2px rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-    overflow: hidden;
+        /* Main shadow */ 0 0 0 2px rgba(255, 255, 255, 0.3); /* Border highlight */
+    transition: all 0.3s ease; /* Smooth hover transitions */
+    overflow: hidden; /* Contain any overflow content */
 }
 
+/* Animated border glow effect for iframe wrapper */
 .iframe-wrapper::before {
     content: "";
     position: absolute;
-    top: -2px;
+    top: -2px; /* Extend slightly beyond wrapper */
     left: -2px;
     right: -2px;
     bottom: -2px;
+    /* Cycling gradient colors for border effect */
     background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
     border-radius: 25px;
-    z-index: -1;
+    z-index: -1; /* Behind the main wrapper */
     animation: borderGlow 3s ease-in-out infinite alternate;
 }
 
+/* Border glow animation - pulses the border opacity */
 @keyframes borderGlow {
     0% {
-        opacity: 0.5;
+        opacity: 0.5; /* Dimmer state */
     }
     100% {
-        opacity: 0.8;
+        opacity: 0.8; /* Brighter state */
     }
 }
 
+/* Iframe wrapper hover effect - lift and scale */
 .iframe-wrapper:hover {
-    transform: translateY(-5px) scale(1.02);
+    transform: translateY(-5px) scale(1.02); /* Lift up and slightly enlarge */
     box-shadow:
         0 30px 60px rgba(102, 126, 234, 0.25),
-        0 0 0 3px rgba(255, 255, 255, 0.4);
+        /* Enhanced shadow */ 0 0 0 3px rgba(255, 255, 255, 0.4); /* Stronger border highlight */
 }
 
+/* Newsletter iframe styling */
 iframe {
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    max-width: 100%;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transitions */
+    max-width: 100%; /* Responsive width */
 }
 
-/* Floating elements around iframe */
+/* Floating emoji decoration for newsletter iframe */
 .iframe-wrapper::after {
-    content: "📧✨💌📝";
+    content: "📧✨💌📝"; /* Email-themed emojis */
     position: absolute;
-    top: -15px;
-    right: -15px;
+    top: -15px; /* Float above the wrapper */
+    right: -15px; /* Position at top-right */
     font-size: 1.2em;
-    animation: floatEmoji 4s ease-in-out infinite;
-    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+    animation: floatEmoji 4s ease-in-out infinite; /* Gentle floating motion */
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0); /* Warm gradient */
     padding: 8px 12px;
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Floating animation for emoji decoration */
 @keyframes floatEmoji {
     0%,
     100% {
-        transform: translateY(0px) rotate(-5deg);
+        transform: translateY(0px) rotate(-5deg); /* Start/end position with tilt */
     }
     50% {
-        transform: translateY(-10px) rotate(5deg);
+        transform: translateY(-10px) rotate(5deg); /* Float up with opposite tilt */
     }
 }
 
-/* Mobile responsive for newsletter */
+/* Mobile responsive styles for newsletter page */
 @media (max-width: 768px) {
     .newsletter-container {
-        max-width: 95vw;
-        padding: 20px;
+        max-width: 95vw; /* Almost full width on mobile */
+        padding: 20px; /* Reduced padding */
     }
 
     .iframe-wrapper {
-        padding: 15px;
-        margin: 20px auto;
+        padding: 15px; /* Smaller padding inside wrapper */
+        margin: 20px auto; /* Reduced margins */
     }
 
     iframe {
-        width: 100%;
-        height: 700px;
+        width: 100%; /* Full width on mobile */
+        height: 700px; /* Adjusted height for mobile */
     }
 }
 
-/* Copy Button Styles */
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .installation-container {
+        margin: 5px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+        letter-spacing: -1px;
+    }
+
+    h1::after {
+        right: -30px;
+        font-size: 0.4em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        padding: 0.1em 0.5em;
+    }
+
+    p {
+        font-size: 1em;
+        margin: 15px 0;
+        padding: 15px 20px;
+    }
+
+    code {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+}
+
+/* ===== CODE INTERACTION BUTTONS ===== */
+/* Container for code blocks with copy/run buttons */
 .code-container {
-    position: relative;
+    position: relative; /* For absolute positioning of buttons */
     display: inline-block;
-    width: 100%;
+    width: 100%; /* Full width */
 }
 
+/* Button group container - holds copy and run buttons */
 .code-buttons {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    gap: 8px;
-    z-index: 10;
+    position: absolute; /* Float over code blocks */
+    top: 10px; /* Position from top */
+    right: 10px; /* Position from right */
+    display: flex; /* Horizontal button layout */
+    gap: 8px; /* Space between buttons */
+    z-index: 10; /* Above code content */
 }
 
+/* Base styling for copy and run buttons */
 .copy-button,
 .run-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(
+        135deg,
+        #667eea 0%,
+        #764ba2 100%
+    ); /* Blue gradient */
     color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 0.9em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-    opacity: 0.8;
+    border: none; /* Remove default button border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 8px 12px; /* Internal spacing */
+    font-size: 0.9em; /* Slightly smaller text */
+    font-weight: 600; /* Semi-bold */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth animations */
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); /* Blue shadow */
+    opacity: 0.8; /* Slightly transparent when idle */
+    /* Accessibility improvements */
+    min-width: 60px;
+    white-space: nowrap;
+    outline: none;
 }
 
+/* Focus states for accessibility */
+.copy-button:focus,
+.run-button:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Run button specific styling - green theme */
 .run-button {
-    background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
-    box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3);
+    background: linear-gradient(
+        135deg,
+        #00b894 0%,
+        #00a085 100%
+    ); /* Green gradient */
+    box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3); /* Green shadow */
 }
 
+/* General hover effect for both buttons */
 .copy-button:hover,
 .run-button:hover {
-    opacity: 1;
-    transform: translateY(-2px);
+    opacity: 1; /* Full opacity on hover */
+    transform: translateY(-2px); /* Lift up slightly */
 }
 
+/* Copy button specific hover effects */
 .copy-button:hover {
-    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4); /* Enhanced blue shadow */
+    background: linear-gradient(
+        135deg,
+        #764ba2 0%,
+        #667eea 100%
+    ); /* Reversed gradient */
 }
 
+/* Run button specific hover effects */
 .run-button:hover {
-    box-shadow: 0 6px 16px rgba(0, 184, 148, 0.4);
-    background: linear-gradient(135deg, #00a085 0%, #00b894 100%);
+    box-shadow: 0 6px 16px rgba(0, 184, 148, 0.4); /* Enhanced green shadow */
+    background: linear-gradient(
+        135deg,
+        #00a085 0%,
+        #00b894 100%
+    ); /* Reversed gradient */
 }
 
+/* Active (clicked) state for both buttons */
 .copy-button:active,
 .run-button:active {
-    transform: translateY(0);
+    transform: translateY(0); /* Return to original position when clicked */
 }
 
+/* Copy button active state shadow */
 .copy-button:active {
-    box-shadow: 0 3px 8px rgba(102, 126, 234, 0.5);
+    box-shadow: 0 3px 8px rgba(102, 126, 234, 0.5); /* Pressed shadow effect */
 }
 
+/* Run button active state shadow */
 .run-button:active {
-    box-shadow: 0 3px 8px rgba(0, 184, 148, 0.5);
+    box-shadow: 0 3px 8px rgba(0, 184, 148, 0.5); /* Pressed shadow effect */
 }
 
+/* Copy button success state - shows when text is copied */
 .copy-button.copied {
-    background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
-    animation: pulse 0.5s ease;
+    background: linear-gradient(
+        135deg,
+        #00b894 0%,
+        #00a085 100%
+    ); /* Green success color */
+    animation: pulse 0.5s ease; /* Pulse animation for feedback */
 }
 
+/* Run button loading state - shows when code is executing */
 .run-button.running {
-    background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
-    animation: pulse 0.5s ease infinite;
+    background: linear-gradient(
+        135deg,
+        #fdcb6e 0%,
+        #e17055 100%
+    ); /* Orange loading color */
+    animation: pulse 0.5s ease infinite; /* Continuous pulse while running */
 }
 
+/* Pulse animation for button feedback states */
 @keyframes pulse {
     0% {
-        transform: scale(1);
+        transform: scale(1); /* Normal size */
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.1); /* Slightly larger */
     }
     100% {
-        transform: scale(1);
+        transform: scale(1); /* Back to normal */
     }
 }
 
-/* Make code blocks relative positioned for copy button */
+/* Make code elements relative positioned for button overlay */
 pre {
-    position: relative;
+    position: relative; /* Allows absolute positioning of buttons within */
 }
 
 code {
-    position: relative;
+    position: relative; /* Allows absolute positioning of buttons within */
 }
 
-/* Code Output Styles */
+/* ===== CODE OUTPUT DISPLAY ===== */
+/* Terminal-like output area for code execution results */
 .code-output {
-    margin-top: 15px;
-    padding: 15px 20px;
-    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-    border-radius: 12px;
-    border: 2px solid #4a5568;
-    font-family: "Fira Code", "Monaco", monospace;
+    margin-top: 15px; /* Space from code block */
+    padding: 15px 20px; /* Internal spacing */
+    background: linear-gradient(
+        135deg,
+        #2d3748 0%,
+        #1a202c 100%
+    ); /* Dark terminal colors */
+    border-radius: 12px; /* Rounded corners */
+    border: 2px solid #4a5568; /* Subtle border */
+    font-family: "Fira Code", "Monaco", monospace; /* Monospace font */
     font-size: 1em;
-    color: #68d391;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    display: none;
-    animation: slideDown 0.3s ease;
+    color: #68d391; /* Green terminal text */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Depth shadow */
+    white-space: pre-wrap; /* Preserve formatting */
+    word-wrap: break-word; /* Handle long lines */
+    overflow-x: auto; /* Handle very long lines */
+    max-height: 300px; /* Prevent extremely long output */
+    overflow-y: auto; /* Scroll if needed */
+    display: none; /* Hidden by default */
+    animation: slideDown 0.3s ease; /* Slide in animation */
+    /* Better text selection */
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
 }
 
+/* Show the output area when needed */
 .code-output.show {
-    display: block;
+    display: block; /* Make visible when show class is added */
 }
 
+/* Error state styling for output area */
 .code-output.error {
-    color: #f56565;
-    border-color: #e53e3e;
+    color: #f56565; /* Red error text */
+    border-color: #e53e3e; /* Red error border */
 }
 
+/* Slide down animation for output area appearance */
 @keyframes slideDown {
     from {
-        opacity: 0;
-        transform: translateY(-10px);
+        opacity: 0; /* Start invisible */
+        transform: translateY(-10px); /* Start above final position */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1; /* End fully visible */
+        transform: translateY(0); /* End at final position */
     }
 }
 
-/* Loading spinner for Pyodide */
+/* ===== LOADING SPINNER ===== */
+/* Spinner animation for loading states */
 .loading-spinner {
     display: inline-block;
-    width: 12px;
+    width: 12px; /* Small spinner size */
     height: 12px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: #fff;
-    animation: spin 1s ease-in-out infinite;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+    border-radius: 50%; /* Perfect circle */
+    border-top-color: #fff; /* White spinning section */
+    animation: spin 1s ease-in-out infinite; /* Continuous spin */
 }
 
+/* Spin animation for loading spinner */
 @keyframes spin {
     to {
-        transform: rotate(360deg);
+        transform: rotate(360deg); /* Full rotation */
+    }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+/* Reduce motion for users with vestibular disorders */
+@media (prefers-reduced-motion: reduce) {
+    /* Disable animations for sensitive users */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    /* Keep essential loading spinner but make it slower */
+    .loading-spinner {
+        animation-duration: 2s !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .installation-container {
+        background: rgba(255, 255, 255, 1);
+        border: 2px solid #000;
+    }
+
+    .code-output {
+        background: #000;
+        color: #fff;
+        border: 2px solid #fff;
+    }
+
+    .copy-button,
+    .run-button {
+        background: #000;
+        color: #fff;
+        border: 2px solid #fff;
     }
 }
