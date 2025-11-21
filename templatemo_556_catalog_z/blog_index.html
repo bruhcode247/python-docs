@@ -3,31 +3,234 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Catalog-Z Bootstrap 5.0 HTML Template</title>
+        <meta name="description" content="Explore our latest blog posts covering technology, programming, tutorials, and industry insights. Stay updated with expert articles and guides." />
+        <meta name="keywords" content="blog, technology, programming, tutorials, articles, development" />
+        <meta name="author" content="Tech Blog Team" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourblog.com/" />
+        <meta property="og:title" content="Tech Insights Blog - Latest Articles & Tutorials" />
+        <meta property="og:description" content="Explore our latest blog posts covering technology, programming, tutorials, and industry insights." />
+        <meta property="og:image" content="https://yourblog.com/img/blog-og-image.jpg" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://yourblog.com/" />
+        <meta property="twitter:title" content="Tech Insights Blog - Latest Articles & Tutorials" />
+        <meta property="twitter:description" content="Explore our latest blog posts covering technology, programming, tutorials, and industry insights." />
+        <meta property="twitter:image" content="https://yourblog.com/img/blog-og-image.jpg" />
+
+        <title>Tech Insights Blog - Latest Articles & Tutorials</title>
+
+        <!-- Preconnect to external domains -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- Stylesheets -->
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="fontawesome/css/all.min.css" />
         <link rel="stylesheet" href="css/templatemo-style.css" />
-        <!--
 
-TemplateMo 556 Catalog-Z
+        <!-- RSS Feed -->
+        <link rel="alternate" type="application/rss+xml" title="Tech Insights Blog RSS Feed" href="/rss.xml" />
 
-https://templatemo.com/tm-556-catalog-z
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://yourblog.com/blog" />
 
--->
+        <!-- Custom Blog Styles -->
+        <style>
+            .blog-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                height: 100%;
+                border-radius: 8px;
+                overflow: hidden;
+                background: #fff;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .blog-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            }
+            .blog-meta {
+                font-size: 0.875rem;
+                color: #6c757d;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin: 10px 0;
+            }
+            .blog-excerpt {
+                color: #495057;
+                line-height: 1.6;
+                margin: 15px 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .category-badge {
+                display: inline-block;
+                padding: 4px 12px;
+                background: #007bff;
+                color: white;
+                border-radius: 20px;
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 10px;
+            }
+            .author-info {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-top: 15px;
+            }
+            .author-avatar {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            .read-more-btn {
+                color: #007bff;
+                text-decoration: none;
+                font-weight: 500;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                transition: gap 0.3s ease;
+            }
+            .read-more-btn:hover {
+                gap: 10px;
+                color: #0056b3;
+            }
+            .blog-sidebar {
+                position: sticky;
+                top: 100px;
+            }
+            .search-box {
+                position: relative;
+                margin-bottom: 30px;
+            }
+            .search-box input {
+                width: 100%;
+                padding: 12px 45px 12px 15px;
+                border: 1px solid #e0e0e0;
+                border-radius: 25px;
+                outline: none;
+                transition: border-color 0.3s ease;
+            }
+            .search-box input:focus {
+                border-color: #007bff;
+            }
+            .search-box button {
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #007bff;
+                border: none;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                cursor: pointer;
+            }
+            .newsletter-box {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                padding: 30px;
+                border-radius: 10px;
+                color: white;
+                margin-bottom: 30px;
+            }
+            .popular-posts .post-item {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            .popular-posts .post-item:last-child {
+                border-bottom: none;
+            }
+            .popular-posts .post-thumb {
+                width: 70px;
+                height: 70px;
+                border-radius: 8px;
+                object-fit: cover;
+                flex-shrink: 0;
+            }
+            .categories-list {
+                list-style: none;
+                padding: 0;
+            }
+            .categories-list li {
+                padding: 10px 0;
+                border-bottom: 1px solid #e0e0e0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .categories-list li:last-child {
+                border-bottom: none;
+            }
+            .categories-list a {
+                color: #495057;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            .categories-list a:hover {
+                color: #007bff;
+            }
+            .post-count {
+                background: #f8f9fa;
+                padding: 2px 8px;
+                border-radius: 12px;
+                font-size: 0.875rem;
+                color: #6c757d;
+            }
+        </style>
+
+        <!-- Structured Data for Blog -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Tech Insights Blog",
+            "description": "Technology, programming, and development blog",
+            "url": "https://yourblog.com/blog",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Tech Insights",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://yourblog.com/logo.png"
+                }
+            }
+        }
+        </script>
     </head>
     <body>
-        <!-- Page Loader -->
-        <div id="loader-wrapper">
-            <div id="loader"></div>
+        <!-- Skip to main content for accessibility -->
+        <a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
 
+        <!-- Page Loader -->
+        <div id="loader-wrapper" aria-hidden="true">
+            <div id="loader"></div>
             <div class="loader-section section-left"></div>
             <div class="loader-section section-right"></div>
         </div>
-        <nav class="navbar navbar-expand-lg">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <i class="fas fa-film mr-2"></i>
-                    Catalog-Z
+                <a class="navbar-brand" href="/">
+                    <i class="fas fa-blog mr-2" aria-hidden="true"></i>
+                    Tech Insights
                 </a>
                 <button
                     class="navbar-toggler"
@@ -40,507 +243,404 @@ https://templatemo.com/tm-556-catalog-z
                 >
                     <i class="fas fa-bars"></i>
                 </button>
-                <div
-                    class="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                >
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a
-                                class="nav-link nav-link-1 active"
-                                aria-current="page"
-                                href="index.html"
-                                >Photos</a
-                            >
+                            <a class="nav-link nav-link-1 active" aria-current="page" href="/blog">Blog</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                                Categories
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                                <li><a class="dropdown-item" href="/category/technology">Technology</a></li>
+                                <li><a class="dropdown-item" href="/category/programming">Programming</a></li>
+                                <li><a class="dropdown-item" href="/category/tutorials">Tutorials</a></li>
+                                <li><a class="dropdown-item" href="/category/design">Design</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-2" href="videos.html"
-                                >Videos</a
-                            >
+                            <a class="nav-link nav-link-3" href="/about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-3" href="about.html"
-                                >About</a
-                            >
+                            <a class="nav-link nav-link-4" href="/contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-4" href="contact.html"
-                                >Contact</a
-                            >
+                            <a class="nav-link" href="/rss.xml" aria-label="RSS Feed">
+                                <i class="fas fa-rss"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <div
-            class="tm-hero d-flex justify-content-center align-items-center"
-            data-parallax="scroll"
-            data-image-src="img/hero.jpg"
-        >
-            <form class="d-flex tm-search-form">
-                <input
-                    class="form-control tm-search-input"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                />
-                <button
-                    class="btn btn-outline-success tm-search-btn"
-                    type="submit"
-                >
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-        </div>
-
-        <div class="container-fluid tm-container-content tm-mt-60">
-            <div class="row mb-4">
-                <h2 class="col-6 tm-text-primary">Latest Photos</h2>
-                <div
-                    class="col-6 d-flex justify-content-end align-items-center"
-                >
-                    <form action="" class="tm-text-primary">
-                        Page
-                        <input
-                            type="text"
-                            value="1"
-                            size="1"
-                            class="tm-input-paging tm-text-primary"
-                        />
-                        of 200
-                    </form>
-                </div>
-            </div>
-            <div class="row tm-mb-90 tm-gallery">
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-03.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Clocks</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">18 Oct 2020</span>
-                        <span>9,906 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-04.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Plants</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">14 Oct 2020</span>
-                        <span>16,100 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-05.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Morning</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">12 Oct 2020</span>
-                        <span>12,460 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-06.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Pinky</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">10 Oct 2020</span>
-                        <span>11,402 views</span>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-01.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Hangers</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">24 Sep 2020</span>
-                        <span>16,008 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-02.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Perfumes</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">20 Sep 2020</span>
-                        <span>12,860 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-07.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Bus</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">16 Sep 2020</span>
-                        <span>10,900 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-08.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>New York</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">12 Sep 2020</span>
-                        <span>11,300 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-09.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Abstract</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">10 Sep 2020</span>
-                        <span>42,700 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-10.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Flowers</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">8 Sep 2020</span>
-                        <span>11,402 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-11.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Rosy</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">4 Sep 2020</span>
-                        <span>32,906 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-12.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Rocki</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">28 Aug 2020</span>
-                        <span>50,700 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-13.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Purple</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">22 Aug 2020</span>
-                        <span>107,510 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-14.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Sea</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">14 Aug 2020</span>
-                        <span>118,006 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-15.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Turtle</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">9 Aug 2020</span>
-                        <span>121,300 views</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                    <figure class="effect-ming tm-video-item">
-                        <img
-                            src="img/img-16.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                        />
-                        <figcaption
-                            class="d-flex align-items-center justify-content-center"
-                        >
-                            <h2>Peace</h2>
-                            <a href="photo-detail.html">View more</a>
-                        </figcaption>
-                    </figure>
-                    <div class="d-flex justify-content-between tm-text-gray">
-                        <span class="tm-text-gray-light">3 Aug 2020</span>
-                        <span>21,204 views</span>
-                    </div>
-                </div>
-            </div>
-            <!-- row -->
-            <div class="row tm-mb-90">
-                <div
-                    class="col-12 d-flex justify-content-between align-items-center tm-paging-col"
-                >
-                    <a
-                        href="javascript:void(0);"
-                        class="btn btn-primary tm-btn-prev mb-2 disabled"
-                        >Previous</a
-                    >
-                    <div class="tm-paging d-flex">
-                        <a
-                            href="javascript:void(0);"
-                            class="active tm-paging-link"
-                            >1</a
-                        >
-                        <a href="javascript:void(0);" class="tm-paging-link"
-                            >2</a
-                        >
-                        <a href="javascript:void(0);" class="tm-paging-link"
-                            >3</a
-                        >
-                        <a href="javascript:void(0);" class="tm-paging-link"
-                            >4</a
-                        >
-                    </div>
-                    <a
-                        href="javascript:void(0);"
-                        class="btn btn-primary tm-btn-next"
-                        >Next Page</a
-                    >
-                </div>
+        <!-- Hero Section -->
+        <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="img/hero.jpg" role="banner">
+            <div class="text-center">
+                <h1 class="text-white mb-4">Welcome to Tech Insights Blog</h1>
+                <p class="text-white h5">Discover the latest in technology, programming, and development</p>
             </div>
         </div>
-        <!-- container-fluid, tm-container-content -->
 
+        <!-- Main Content -->
+        <main id="main-content" class="container-fluid tm-container-content tm-mt-60">
+            <div class="row">
+                <!-- Blog Posts Column -->
+                <div class="col-lg-8">
+                    <!-- Section Header -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h2 class="tm-text-primary mb-3">Latest Articles</h2>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="text-muted">Showing 16 of 200 articles</p>
+                                <div class="btn-group" role="group" aria-label="View options">
+                                    <button type="button" class="btn btn-outline-primary btn-sm active">
+                                        <i class="fas fa-th-large"></i> Grid
+                                    </button>
+                                    <button type="button" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-list"></i> List
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Grid -->
+                    <div class="row" id="blog-posts">
+                        <!-- Blog Post 1 -->
+                        <article class="col-lg-6 col-md-6 mb-4">
+                            <div class="blog-card">
+                                <img src="img/img-03.jpg" alt="Understanding Async/Await in JavaScript" class="img-fluid" loading="lazy" />
+                                <div class="p-3">
+                                    <span class="category-badge">Programming</span>
+                                    <h3 class="h5 mb-2">
+                                        <a href="/blog/understanding-async-await-javascript" class="text-dark text-decoration-none">
+                                            Understanding Async/Await in JavaScript
+                                        </a>
+                                    </h3>
+                                    <div class="blog-meta">
+                                        <span><i class="far fa-calendar"></i> Oct 18, 2023</span>
+                                        <span><i class="far fa-clock"></i> 5 min read</span>
+                                        <span><i class="far fa-eye"></i> 9,906</span>
+                                    </div>
+                                    <p class="blog-excerpt">
+                                        Master asynchronous JavaScript with our comprehensive guide to async/await. Learn best practices, common pitfalls, and real-world examples.
+                                    </p>
+                                    <div class="author-info">
+                                        <img src="img/author-1.jpg" alt="John Doe" class="author-avatar" loading="lazy" />
+                                        <div>
+                                            <small class="text-muted">by</small> <strong>John Doe</strong>
+                                        </div>
+                                    </div>
+                                    <a href="/blog/understanding-async-await-javascript" class="read-more-btn mt-3">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 2 -->
+                        <article class="col-lg-6 col-md-6 mb-4">
+                            <div class="blog-card">
+                                <img src="img/img-04.jpg" alt="Building Scalable React Applications" class="img-fluid" loading="lazy" />
+                                <div class="p-3">
+                                    <span class="category-badge">Technology</span>
+                                    <h3 class="h5 mb-2">
+                                        <a href="/blog/scalable-react-applications" class="text-dark text-decoration-none">
+                                            Building Scalable React Applications
+                                        </a>
+                                    </h3>
+                                    <div class="blog-meta">
+                                        <span><i class="far fa-calendar"></i> Oct 14, 2023</span>
+                                        <span><i class="far fa-clock"></i> 8 min read</span>
+                                        <span><i class="far fa-eye"></i> 16,100</span>
+                                    </div>
+                                    <p class="blog-excerpt">
+                                        Learn architecture patterns and best practices for building large-scale React applications that are maintainable and performant.
+                                    </p>
+                                    <div class="author-info">
+                                        <img src="img/author-2.jpg" alt="Jane Smith" class="author-avatar" loading="lazy" />
+                                        <div>
+                                            <small class="text-muted">by</small> <strong>Jane Smith</strong>
+                                        </div>
+                                    </div>
+                                    <a href="/blog/scalable-react-applications" class="read-more-btn mt-3">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 3 -->
+                        <article class="col-lg-6 col-md-6 mb-4">
+                            <div class="blog-card">
+                                <img src="img/img-05.jpg" alt="Docker for Beginners" class="img-fluid" loading="lazy" />
+                                <div class="p-3">
+                                    <span class="category-badge">Tutorials</span>
+                                    <h3 class="h5 mb-2">
+                                        <a href="/blog/docker-beginners-guide" class="text-dark text-decoration-none">
+                                            Docker for Beginners: Complete Guide
+                                        </a>
+                                    </h3>
+                                    <div class="blog-meta">
+                                        <span><i class="far fa-calendar"></i> Oct 12, 2023</span>
+                                        <span><i class="far fa-clock"></i> 10 min read</span>
+                                        <span><i class="far fa-eye"></i> 12,460</span>
+                                    </div>
+                                    <p class="blog-excerpt">
+                                        Get started with Docker containerization. From installation to deploying your first containerized application.
+                                    </p>
+                                    <div class="author-info">
+                                        <img src="img/author-3.jpg" alt="Mike Johnson" class="author-avatar" loading="lazy" />
+                                        <div>
+                                            <small class="text-muted">by</small> <strong>Mike Johnson</strong>
+                                        </div>
+                                    </div>
+                                    <a href="/blog/docker-beginners-guide" class="read-more-btn mt-3">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 4 -->
+                        <article class="col-lg-6 col-md-6 mb-4">
+                            <div class="blog-card">
+                                <img src="img/img-06.jpg" alt="CSS Grid vs Flexbox" class="img-fluid" loading="lazy" />
+                                <div class="p-3">
+                                    <span class="category-badge">Design</span>
+                                    <h3 class="h5 mb-2">
+                                        <a href="/blog/css-grid-vs-flexbox" class="text-dark text-decoration-none">
+                                            CSS Grid vs Flexbox: When to Use Each
+                                        </a>
+                                    </h3>
+                                    <div class="blog-meta">
+                                        <span><i class="far fa-calendar"></i> Oct 10, 2023</span>
+                                        <span><i class="far fa-clock"></i> 6 min read</span>
+                                        <span><i class="far fa-eye"></i> 11,402</span>
+                                    </div>
+                                    <p class="blog-excerpt">
+                                        Understand the differences between CSS Grid and Flexbox, and learn when to use each layout method effectively.
+                                    </p>
+                                    <div class="author-info">
+                                        <img src="img/author-4.jpg" alt="Sarah Wilson" class="author-avatar" loading="lazy" />
+                                        <div>
+                                            <small class="text-muted">by</small> <strong>Sarah Wilson</strong>
+                                        </div>
+                                    </div>
+                                    <a href="/blog/css-grid-vs-flexbox" class="read-more-btn mt-3">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- More blog posts following same pattern... -->
+                        <!-- Posts 5-16 would continue here with similar structure -->
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Blog pagination">
+                        <ul class="pagination justify-content-center mt-5">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link" href="#">13</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="col-lg-4">
+                    <div class="blog-sidebar">
+                        <!-- Search Widget -->
+                        <div class="widget">
+                            <h3 class="h5 mb-3">Search Articles</h3>
+                            <form class="search-box" role="search">
+                                <input type="search" placeholder="Search..." aria-label="Search articles" />
+                                <button type="submit" aria-label="Submit search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Newsletter Widget -->
+                        <div class="widget newsletter-box">
+                            <h3 class="h5 mb-3">Newsletter</h3>
+                            <p>Get the latest articles</p> delivered to your inbox weekly.</p>
+                            <form class="mt-3">
+                                <input type="email" class="form-control mb-2" placeholder="Your email" aria-label="Email for newsletter" required />
+                                <button type="submit" class="btn btn-light btn-block">Subscribe</button>
+                            </form>
+                        </div>
+
+                        <!-- Categories Widget -->
+                        <div class="widget bg-white p-4 rounded shadow-sm mb-4">
+                            <h3 class="h5 mb-3">Categories</h3>
+                            <ul class="categories-list">
+                                <li>
+                                    <a href="/category/programming">Programming</a>
+                                    <span class="post-count">42</span>
+                                </li>
+                                <li>
+                                    <a href="/category/technology">Technology</a>
+                                    <span class="post-count">38</span>
+                                </li>
+                                <li>
+                                    <a href="/category/tutorials">Tutorials</a>
+                                    <span class="post-count">56</span>
+                                </li>
+                                <li>
+                                    <a href="/category/design">Design</a>
+                                    <span class="post-count">29</span>
+                                </li>
+                                <li>
+                                    <a href="/category/devops">DevOps</a>
+                                    <span class="post-count">35</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Popular Posts Widget -->
+                        <div class="widget bg-white p-4 rounded shadow-sm mb-4">
+                            <h3 class="h5 mb-3">Popular Posts</h3>
+                            <div class="popular-posts">
+                                <div class="post-item">
+                                    <img src="img/img-09.jpg" alt="Python vs JavaScript" class="post-thumb" loading="lazy" />
+                                    <div></div>
+                                        <h4 class="h6 mb-1">
+                                            <a href="#" class="text-dark text-decoration-none">Python vs JavaScript in 2023</a>
+                                        </h4>
+                                        <small class="text-muted">42,700 views</small>
+                                    </div>
+                                </div>
+                                <div class="post-item">
+                                    <img src="img/img-12.jpg" alt="AI Tools" class="post-thumb" loading="lazy" />
+                                    <div>
+                                        <h4 class="h6 mb-1">
+                                            <a href="#" class="text-dark text-decoration-none">Top 10 AI Tools for Developers</a>
+                                        </h4>
+                                        <small class="text-muted">50,700 views</small>
+                                    </div>
+                                </div>
+                                <div class="post-item">
+                                    <img src="img/img-14.jpg" alt="Web3 Development" class="post-thumb" loading="lazy" />
+                                    <div>
+                                        <h4 class="h6 mb-1">
+                                            <a href="#" class="text-dark text-decoration-none">Getting Started with Web3</a>
+                                        </h4>
+                                        <small class="text-muted">118,006 views</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tags Widget -->
+                        <div class="widget bg-white p-4 rounded shadow-sm">
+                            <h3 class="h5 mb-3">Popular Tags</h3>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="/tag/javascript" class="btn btn-sm btn-outline-secondary">JavaScript</a>
+                                <a href="/tag/python" class="btn btn-sm btn-outline-secondary">Python</a>
+                                <a href="/tag/react" class="btn btn-sm btn-outline-secondary">React</a>
+                                <a href="/tag/nodejs" class="btn btn-sm btn-outline-secondary">Node.js</a>
+                                <a href="/tag/docker" class="btn btn-sm btn-outline-secondary">Docker</a>
+                                <a href="/tag/aws" class="btn btn-sm btn-outline-secondary">AWS</a>
+                                <a href="/tag/typescript" class="btn btn-sm btn-outline-secondary">TypeScript</a>
+                                <a href="/tag/mongodb" class="btn btn-sm btn-outline-secondary">MongoDB</a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <!-- Footer -->
         <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
             <div class="container-fluid tm-container-small">
                 <div class="row">
-                    <div class="col-lg-6 col-md-12 col-12 px-5 mb-5">
-                        <h3 class="tm-text-primary mb-4 tm-footer-title">
-                            About Catalog-Z
-                        </h3>
+                    <div class="col-lg-4 col-md-6 col-12 px-5 mb-5">
+                        <h3 class="tm-text-primary mb-4 tm-footer-title">About Tech Insights</h3>
                         <p>
-                            Catalog-Z is free
-                            <a
-                                rel="sponsored"
-                                href="https://v5.getbootstrap.com/"
-                                >Bootstrap 5</a
-                            >
-                            Alpha 2 HTML Template for video and photo websites.
-                            You can freely use this TemplateMo layout for a
-                            front-end integration with any kind of CMS website.
+                            Tech Insights is your go-to source for the latest technology news, programming tutorials,
+                            and industry insights. Join our community of developers and tech enthusiasts.
                         </p>
+                        <div class="mt-3">
+                            <a href="/rss.xml" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-rss"></i> RSS Feed
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
-                        <h3 class="tm-text-primary mb-4 tm-footer-title">
-                            Our Links
-                        </h3>
+                    <div class="col-lg-2 col-md-6 col-12 px-5 mb-5">
+                        <h3 class="tm-text-primary mb-4 tm-footer-title">Quick Links</h3>
                         <ul class="tm-footer-links pl-0">
-                            <li><a href="#">Advertise</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Our Company</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="/blog">Latest Articles</a></li>
+                            <li><a href="/tutorials">Tutorials</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
-                        <ul
-                            class="tm-social-links d-flex justify-content-end pl-0 mb-5"
-                        >
+                    <div class="col-lg-3 col-md-6 col-12 px-5 mb-5">
+                        <h3 class="tm-text-primary mb-4 tm-footer-title">Categories</h3>
+                        <ul class="tm-footer-links pl-0">
+                            <li><a href="/category/programming">Programming</a></li>
+                            <li><a href="/category/technology">Technology</a></li>
+                            <li><a href="/category/tutorials">Tutorials</a></li>
+                            <li><a href="/category/design">Design</a></li>
+                            <li><a href="/category/devops">DevOps</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12 px-5 mb-5">
+                        <h3 class="tm-text-primary mb-4 tm-footer-title">Follow Us</h3>
+                        <ul class="tm-social-links d-flex justify-content-start pl-0 mb-3">
                             <li class="mb-2">
-                                <a href="https://facebook.com"
-                                    ><i class="fab fa-facebook"></i
-                                ></a>
+                                <a href="https://facebook.com/" aria-label="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
                             </li>
                             <li class="mb-2">
-                                <a href="https://twitter.com"
-                                    ><i class="fab fa-twitter"></i
-                                ></a>
+                                <a href="https://twitter.com/" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
                             </li>
                             <li class="mb-2">
-                                <a href="https://instagram.com"
-                                    ><i class="fab fa-instagram"></i
-                                ></a>
+                                <a href="https://linkedin.com/" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </li>
                             <li class="mb-2">
-                                <a href="https://pinterest.com"
-                                    ><i class="fab fa-pinterest"></i
-                                ></a>
+                                <a href="https://github.com/" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
                             </li>
                         </ul>
-                        <a href="#" class="tm-text-gray text-right d-block mb-2"
-                            >Terms of Use</a
-                        >
-                        <a href="#" class="tm-text-gray text-right d-block"
-                            >Privacy Policy</a
-                        >
+                        <p class="mb-2">Subscribe to our newsletter:</p>
+                        <form class="d-flex">
+                            <input type="email" class="form-control form-control-sm" placeholder="Your email" aria-label="Newsletter email" />
+                            <button type="submit" class="btn btn-primary btn-sm ml-2">Subscribe</button>
+                        </form>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-8 col-md-7 col-12 px-5 mb-3">
-                        Copyright 2020 Catalog-Z Company. All rights reserved.
+                        <p class="text-center text-md-left">
+                            Copyright &copy; 2023 Tech Insights Blog. All rights reserved.
+                        </p>
                     </div>
-                    <div class="col-lg-4 col-md-5 col-12 px-5 text-right">
-                        Designed by
-                        <a
-                            href="https://templatemo.com"
-                            class="tm-text-gray"
-                            rel="sponsored"
-                            target="_parent"
-                            >TemplateMo</a
-                        >
+                    <div class="col-lg-4 col-md-5 col-12 px-5 text-center text-md-right">
+                        <a href="/sitemap.xml" class="tm-text-gray mr-3">Sitemap</a>
+                        <a href="/terms" class="tm-text-gray">Terms of Service</a>
                     </div>
-                </div>
-            </div>
-        </footer>
-
-        <script src="js/plugins.js"></script>
-        <script>
-            $(window).on("load", function () {
-                $("body").addClass("loaded");
-            });
-        </script>
-    </body>
-</html>
