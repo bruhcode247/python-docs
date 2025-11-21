@@ -9,29 +9,30 @@
     <body>
         <h1>Pip Basics</h1>
         <button data-supademo-demo="cmi85986365npb7b4l2d1pi2i">
-            Install a package using pip on macos
+            Install a package using pip on macOS
         </button>
-        <button data-supademo-demo=""cmi86tix266l5b7b44bakae8n">
-            uninstall a package using pip on macos
+        <button data-supademo-demo="cmi86tix266l5b7b44bakae8n">
+            Uninstall a package using pip on macOS
         </button>
 
         <script>
-            // Initialize Supademo with configuration
+            // Initialize first Supademo
             Supademo("cmi85986365npb7b4l2d1pi2i", {
                 variables: {
                     email: "", // optional user email
                     name: "", // optional user name
                     // add your custom variables here
+                },
+            });
 
-                // Initialize Supademo with configuration
-                Supademo("cmi86tix266l5b7b44bakae8n", {
-                    variables: {
-                        email: "", // optional user email
-                        name: "", // optional user name
-                        // add your custom variables here
-
-                    }
-                });
+            // Initialize second Supademo
+            Supademo("cmi86tix266l5b7b44bakae8n", {
+                variables: {
+                    email: "", // optional user email
+                    name: "", // optional user name
+                    // add your custom variables here
+                },
+            });
         </script>
     </body>
 </html>
